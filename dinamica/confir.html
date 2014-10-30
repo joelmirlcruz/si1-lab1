@@ -14,15 +14,14 @@
 
     <p>Adicione um tema de interesse que deseja cursa</p><br>
 <form action="" method="post">
-        <input type="text" name="entrada" value="" onfocus="this.value"><span class="help-inline">tema de Interesse</span><br>
+        <input type="text" name="entrada" value="" ><br>
+    <button type="reset" id="pegar-valor">Enviar</button><br>
 </form>
-        <button id="pegar-valor">Enviar</button><br>
 
-<div aling="left">
-    <script>chama();</script>
-    <p aling="center">Lista de assuntos a aprender</p><textarea aling="center" name="lista1" id="lista1"></textarea>
-    <p aling="center">Lista de assuntos a aprendido</p><textarea aling="center" value="document.getElementById('nome').value;"></textarea><br>
-</div>
+    <p >Lista de assuntos a aprender</p><textarea aling="left" name="lista1" id="lista1"></textarea>
+    <button id="passa-valor"> > </button>
+    <p >Lista de assuntos a aprendido</p><textarea  name="lista2" id="lista2"></textarea><br>
+
 
 
     </body>
@@ -30,16 +29,20 @@
     <script type="text/javascript">
         $(document).ready(function(){
             var lista =[];
+            var temp ="";
 
             $("#pegar-valor").click(function(){
 
                 var valor = $("input[name=entrada]").val();
                 lista[lista.length]= valor;
-                var temp ="";
+                 temp ="";
                 for(var i =0;i<lista.length;i++){
                    temp +=lista[i]+"\n";
                 }
                 $("#lista1").text(temp);
+            });
+            $("#passa-valor").click(function(){
+                $("#lista2").text(temp);
             });
         });
     </script>
